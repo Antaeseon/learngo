@@ -2,17 +2,11 @@ package main
 
 import (
 	"fmt"
-	"strings"
+
+	"github.com/antaeseon/learngo/accounts"
 )
 
-func lenAndUpper(name string) (lenght int, uppercase string) {
-	defer fmt.Println("I'm done")
-	lenght = len(name)
-	uppercase = strings.ToUpper(name)
-	return
-}
-
 func main() {
-	tLength, name := lenAndUpper("This One")
-	fmt.Println(tLength, name)
+	account := accounts.NewAccount("ts")
+	fmt.Println(account)
 }
