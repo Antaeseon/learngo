@@ -3,16 +3,16 @@ package main
 import (
 	"fmt"
 
-	"github.com/antaeseon/learngo/accounts"
+	"github.com/antaeseon/learngo/mydict"
 )
 
 func main() {
-	account := accounts.NewAccount("ts")
-	account.Deposit(10)
-	fmt.Println(account.Balance())
-	err := account.Withdraw(20)
+	dictionary := mydict.Dictionary{}
+	err := dictionary.Add("hello", "Greeting")
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(account)
+	definition, err := dictionary.Search("hello")
+	fmt.Println(definition, err)
+
 }
